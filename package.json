@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Création du site Ohmyfood Paris",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/styles.scss:.css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdilaFrontDev/ohmyfood.git"
+  },
+  "author": "AdilaFrontDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdilaFrontDev/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/AdilaFrontDev/ohmyfood#readme"
+}
