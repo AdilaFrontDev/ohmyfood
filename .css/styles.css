@@ -1,3 +1,4 @@
+/* Variables */
 /** Header **/
 header {
   display: flex;
@@ -13,7 +14,8 @@ header img {
 .location {
   display: flex;
   justify-content: center;
-  background-color: red;
+  align-items: center;
+  background-color: #EAEAEA;
 }
 
 /*# sourceMappingURL=styles.css.map */
