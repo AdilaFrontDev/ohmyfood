@@ -1,10 +1,9 @@
 /* Variables */
 
-$colorpannel-1: #9356DC;
-$colorpannel-2: #003A68;
-$colorpannel-3: #89C8FA;
-$colorpannel-4: #008766;
-$colorpannel-5: #99E2D0;
+$color-pimary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-tertiary-bis: #008766;
 
 $primary-background: #F6F6F6;
 $secondary-background: #EAEAEA;
@@ -47,6 +46,7 @@ header {
     }
 }
 
+
 /* Reservations */
 
 .menu-reservation {
@@ -69,14 +69,15 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: $primary-background;
     &-card {
         border-radius: 15px;
-        background-color: #9356DC;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         width: 340px;
         overflow: hidden;
         margin: 20px;
         position: relative;
+        
         
          &_img {
                 width: 100%;
@@ -86,14 +87,48 @@ header {
         }
         &_text {
                 display: flex;
+                margin-left: 15px;
+                height: 77px;
+                background-color: linear-gradient();
+                align-items: center;
+
+                h3 {
+                    font-size: 1.125em;
+                    font-weight: 700;
+                }
+                p {
+                    font-size: 17px;
+                    font-weight: 300px;
+                }
+                i {
+                    position: absolute;
+                    width: 22px;
+                    bottom: 33px;
+                    right: 25px;
+                }
+                &--active {
+                    background: -webkit-linear-gradient($color-pimary,$color-secondary);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                  }
         }
     }
         
 }
 
+.favorite:active {
+    
+}
+
 .new {
     position: absolute;
-    top: 20px;
-    right: 5px;
-    background-color: #99E2D0;
+    top: 5px;
+    right: 15px;
+    background-color: $color-tertiary;
+    color: $color-tertiary-bis;
+    padding: 6px 9px;
+    font-size: 0.875em;
+    font-weight: 500;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
 }
