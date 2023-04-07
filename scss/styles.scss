@@ -24,14 +24,22 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 63px;
+    height: 65px;
     gap: 10px;
+    position: relative;
     img {
         width: 200px;
         height: 34.2px;
     }
 }
-
+.back-to-index {
+    position: absolute;
+    top: 65/2 px;
+    left : 10px;
+    a {
+        color: #000;
+    }
+}
 /* Location */
 
 .location {
@@ -51,16 +59,62 @@ header {
 
 .menu-reservation {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column;    
     align-items: center;
     text-align: center;
     background-color: $primary-background;
+    padding-bottom: 50px;
     h1 {
         font-size: 1.5em;
-        margin: 50px;
+        margin-top: 50px;
+    }
+    > p{
+        font-size: 1.125em;
+        font-weight: 300;
+        margin-bottom: 50px;
+    }
+    .button {
+        color: #ffffff;
+        width: 220px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        background: linear-gradient($color-secondary, $color-pimary);
+        font-size: 1em;
+        font-weight: 500;
+        position: relative;
+        z-index: 1;
+        &--clickable {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        &:hover{
+            &::after {
+                opacity: 0.15;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: #ffffff;
+            opacity: 0;
+            z-index: -1;
+
+        }
     }
 }
+
 
 
 /* Restaurants */ 
@@ -70,20 +124,42 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: $primary-background;
+    position: relative;
+    h2 {
+        font-size: 1.5em;
+        font-weight: 700;
+        position: relative;
+        right: 110px;
+        margin-bottom: 25px;
+    }
     &-card {
         border-radius: 15px;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         width: 340px;
         overflow: hidden;
-        margin: 20px;
+        margin-bottom: 20px;
         position: relative;
+        /*.clicked {
+            color: transparent;
+            &:active {
+                background-image: linear-gradient($color-pimary, $color-secondary);
+                background-clip: text;
+                color: transparent;
+            }
+        }*/
         
-        
-         &_img {
+        &_img {
                 width: 100%;
                 height: 175px;
-                object-fit: cover;
-
+                overflow: hidden;
+                position: relative;
+                img {
+                    width: 100%;
+                    position: relative;
+                    top: -50px;
+                }
+                
+                
         }
         &_text {
                 display: flex;
@@ -91,34 +167,46 @@ header {
                 height: 77px;
                 background-color: linear-gradient();
                 align-items: center;
+                position: relative;
+                bottom: -5px;
 
                 h3 {
                     font-size: 1.125em;
                     font-weight: 700;
+                   
                 }
                 p {
                     font-size: 17px;
-                    font-weight: 300px;
+                    font-weight: 300;
+                    position: relative;
+                    bottom: 14px;
+                    
                 }
                 i {
                     position: absolute;
-                    width: 22px;
+                    font-size: 22px;
                     bottom: 33px;
                     right: 25px;
+                    z-index: 1;
+                    
                 }
-                &--active {
-                    background: -webkit-linear-gradient($color-pimary,$color-secondary);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                  }
+                &_logo {
+                    background-color: #ffffff;
+                }
+        }
+        &--clickable {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 0;
+            
         }
     }
-        
 }
 
-.favorite:active {
-    
-}
 
 .new {
     position: absolute;
@@ -131,4 +219,112 @@ header {
     font-weight: 500;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
     border-radius: 2px;
+}
+
+/* functioning */
+
+.functioning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    h2 {
+        font-size: 1.5em;
+        font-weight: 700;
+        position: relative;
+        right: 85px;
+        margin-bottom: 25px;
+    }
+    &-card {
+        background-color: $primary-background;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        gap: 25px;
+        position: relative;
+        width: 322px;
+        height: 72px;
+        margin-bottom: 20px;
+        &_number{
+            display: inline-block;
+            text-align: center;
+            line-height: 24px;
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            background-color: $color-pimary;
+            color: #ffffff;
+            font-size: 0.875em;
+            font-weight: 500;
+            position: absolute;
+            left:-12px;
+
+        }
+        &_icon {
+            color: darken($secondary-background,45);
+            &--selected {
+                color: $color-pimary;
+            }
+        }
+    }
+}
+
+/* footer */
+
+.footer {
+    background-color: darken($secondary-background, 70);
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 10px;
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+        &_logo{
+            width: 138px;
+            height: 27px;
+        }
+        &-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px
+            &_block1 {
+                display: flex;
+                flex-direction: column;
+            }
+                
+            &_block2 {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+        
+        }
+    }
+
+
+
+
+    /***************** pages  ****************/
+
+.background-restaurant {
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50px;
+    img {
+        width: 100px;
+        height: 100px;
+
+
+    }
+
 }
