@@ -14,10 +14,15 @@ $secondary-background: #EAEAEA;
     font-family: 'Roboto';
 }
 
+main {
+    position: relative;
+}
+
 body {
     width: 100%;
     max-width: 1440px;
     min-width: 375px;
+    margin: auto;
 }
 
 .button {
@@ -69,6 +74,7 @@ header {
     align-items: center;
     height: 65px;
     gap: 10px;
+    position: relative;
     img {
         width: 200px;
         height: 34.2px;
@@ -126,14 +132,44 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: cen;
     background-color: $primary-background;
     position: relative;
+    padding: 30px 0 0 0;
+
     h2 {
         font-size: 1.5em;
         font-weight: 700;
         position: relative;
         right: 110px;
         margin-bottom: 25px;
+        @media (min-width: 768px) {
+            right: 465px;
+        }
+        @media (min-width: 768px) and (max-width: 1025px) {
+            right: 315px;
+        }
+    }
+    &_line-1 {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 768px)  {
+            flex-direction: row;
+            gap: 80px;
+            margin-bottom: 30px;
+        } 
+        
+
+    }
+    &_line-2 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 60px;
+        @media (min-width: 768px)  {
+            flex-direction: row;
+            gap: 80px;
+            margin-bottom: 30px;
+        } 
     }
     &-card {
         border-radius: 15px;
@@ -142,6 +178,9 @@ header {
         overflow: hidden;
         margin-bottom: 20px;
         position: relative;
+        @media (min-width: 1025px) {
+            width: 490px;
+        }
         /*.clicked {
             color: transparent;
             &:active {
@@ -171,9 +210,10 @@ header {
                     width: 100%;
                     position: relative;
                     top: -50px;
-                }
-                
-                
+                }    
+        }
+        #lanoteenchantee {
+            object-position: 0 -100px;
         }
         &_text {
                 display: flex;
@@ -231,13 +271,27 @@ header {
     flex-direction: column;
     align-items: center;
     position: relative;
+    padding: 30px 0;
+    &-choice {
+        display: flex;
+        flex-direction: column;
+        
+        @media (min-width: 1025px) {
+            flex-direction: row;
+            gap: 40px;
+        }
+    }
+    
 
     h2 {
         font-size: 1.5em;
         font-weight: 700;
         position: relative;
-        right: 85px;
+        right: 80px;
         margin-bottom: 25px;
+        @media (min-width: 1025px) {
+            right: 445px;
+        }
     }
     &-card {
         background-color: $primary-background;
@@ -285,7 +339,14 @@ header {
     display: flex;
     flex-direction: column;
     padding: 25px;
-    gap: 10px;
+    gap: 30px;
+    position: relative;
+    @media (min-width: 1025px) {
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 90px;
+    }
         a {
             text-decoration: none;
             color: #ffffff;
@@ -293,19 +354,41 @@ header {
         &_logo{
             width: 138px;
             height: 27px;
+            @media (min-width: 1025px) {
+                position: relative;
+                top: -3px;
+            }
+
         }
         &-links {
             display: flex;
             flex-direction: column;
-            gap: 20px
+            gap: 15px;
+            @media (min-width: 1025px) {
+                flex-direction: row;
+                
+            }
             &_block1 {
                 display: flex;
                 flex-direction: column;
+                justify-content: flex-start;
+                gap: 15px;
+                p {
+                    margin: 0;
+                }
+                @media (min-width: 1025px) {
+                    flex-direction: row;
+                    
+                }
             }
             &_block2 {
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
+                @media (min-width: 1025px) {
+                    flex-direction: row;
+                    align-items: center;
+                }
             }
         
         }
@@ -317,8 +400,12 @@ header {
     /***************** pages  ****************/
 
 .background {
+    height: 350px;
+    overflow: hidden;
     &_img {
         width: 100%;
+        position: absolute;
+        object-position: 0 -250px;
     }
 }
 
@@ -327,7 +414,7 @@ header {
 .menu {
     display: flex;
     flex-direction: column;
-    position: relative;
+    /*position: relative;*/
     &-card {    
         background-color: $primary-background;  
         border-radius: 40px 40px 0px 0px;  
