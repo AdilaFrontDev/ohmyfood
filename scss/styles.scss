@@ -76,8 +76,12 @@ header {
     gap: 10px;
     position: relative;
     img {
-        width: 200px;
-        height: 34.2px;
+        width: 162px;
+        height: 27,7px;
+        @media (min-width: 768px) {
+            width: 200px;
+            height: 34.2px;
+        }
     }
 }
 .back-to-index {
@@ -205,15 +209,19 @@ header {
                 width: 100%;
                 height: 175px;
                 overflow: hidden;
-                position: relative;
                 img {
                     width: 100%;
-                    position: relative;
-                    top: -50px;
+                    object-position: 0 -50px;
+                    @media (min-width: 1025px) {
+                        object-position: 0 -100px;
+                    }
                 }    
         }
         #lanoteenchantee {
-            object-position: 0 -100px;
+            object-position: 0 -150px;
+            @media (min-width: 1025px) {
+                object-position: 0 -240px;
+            }
         }
         &_text {
                 display: flex;
@@ -340,12 +348,20 @@ header {
     flex-direction: column;
     padding: 25px;
     gap: 30px;
-    position: relative;
+    &--shift {
+        position: relative;
+        top:-60px;
+        @media (min-width: 768px) and (max-width:1025px){
+            top: -90px;
+        }
+    }
+    
+    width: 100%;
     @media (min-width: 1025px) {
         flex-direction: row-reverse;
-        justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         gap: 90px;
+        padding: 50px 50px 25px 0;
     }
         a {
             text-decoration: none;
@@ -400,12 +416,22 @@ header {
     /***************** pages  ****************/
 
 .background {
-    height: 350px;
     overflow: hidden;
+   
+    @media (min-width: 768px) and (max-width:1025px){
+        height: 350px;
+    }
+    @media (min-width: 1025px) {
+        height: 400px;    
+    }
     &_img {
         width: 100%;
-        position: absolute;
-        object-position: 0 -250px;
+        @media (min-width: 768px) and (max-width:1025px) {
+            object-position: 0 -230px;
+        }
+        @media (min-width: 1025px) {
+            object-position: 0 -330px;
+        }
     }
 }
 
@@ -414,7 +440,13 @@ header {
 .menu {
     display: flex;
     flex-direction: column;
-    /*position: relative;*/
+    position: relative;
+    top:-60px;
+   
+    @media (min-width: 768px) and (max-width:1025px){
+        top: -90px;
+    }
+    width: 100%;
     &-card {    
         background-color: $primary-background;  
         border-radius: 40px 40px 0px 0px;  
@@ -510,6 +542,4 @@ header {
     }
     
 }
-
-
 
