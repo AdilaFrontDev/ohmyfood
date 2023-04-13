@@ -66,6 +66,37 @@ body {
     }
 }
 
+.heart-checkbox {
+    .square {
+        display: none;
+     }
+    & input [type="checkbox"] {
+        display: none;
+    }
+    & .checked {
+        display: none;
+        background: linear-gradient($color-pimary, $color-secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    & input[type="checkbox"] {
+        &:checked~.checked {
+        display: inline;
+        }
+        &:checked~.unchecked {
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+
+
+
 /** Header **/
 
 header {
