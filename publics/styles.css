@@ -53,24 +53,28 @@ body {
   z-index: -1;
 }
 
-.heart-checkbox .square {
-  display: none;
+.favorite {
+  position: relative;
+  height: 25px;
+  width: 25px;
 }
-.heart-checkbox input [type=checkbox] {
-  display: none;
+.favorite--clicked {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
-.heart-checkbox .checked {
-  display: none;
+.favorite--clicked_heart {
+  opacity: 0;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: opacity 400ms ease-in;
 }
-.heart-checkbox input[type=checkbox]:checked ~ .checked {
-  display: inline;
-}
-.heart-checkbox input[type=checkbox]:checked ~ .unchecked {
-  display: none;
+.favorite--clicked_heart:hover {
+  opacity: 1;
 }
 
 /** Header **/
@@ -185,20 +189,12 @@ header img {
   }
 }
 .restaurants-card {
+  position: relative;
+  width: 340px;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  width: 340px;
   overflow: hidden;
   margin-bottom: 20px;
-  position: relative;
-  /*.clicked {
-      color: transparent;
-      &:active {
-          background-image: linear-gradient($color-pimary, $color-secondary);
-          background-clip: text;
-          color: transparent;
-      }
-  }*/
 }
 @media (min-width: 1025px) {
   .restaurants-card {
@@ -241,29 +237,32 @@ header img {
 }
 .restaurants-card_text {
   display: flex;
-  margin-left: 15px;
-  height: 77px;
-  background-color: linear-gradient();
+  justify-content: space-between;
   align-items: center;
-  position: relative;
-  bottom: -5px;
+  height: 77px;
+  width: 100%;
 }
-.restaurants-card_text h3 {
+.restaurants-card_text .description {
+  height: 100%;
+  margin-left: 15px;
+  line-height: 0;
+}
+.restaurants-card_text .description h3 {
   font-size: 1.125em;
   font-weight: 700;
+  padding-top: 10px;
 }
-.restaurants-card_text p {
-  font-size: 17px;
+.restaurants-card_text .description p {
+  font-size: 1.0625em;
   font-weight: 300;
-  position: relative;
-  bottom: 14px;
+  padding: 7px 0 10px 0;
 }
-.restaurants-card_text i {
-  position: absolute;
+.restaurants-card_text .favorite {
+  margin: 15px;
+  z-index: 2;
+}
+.restaurants-card_text .favorite i {
   font-size: 22px;
-  bottom: 33px;
-  right: 25px;
-  z-index: 1;
 }
 .restaurants-card_text_logo {
   background-color: #ffffff;
@@ -527,6 +526,7 @@ header img {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   background: #ffffff;
+  overflow: hidden;
 }
 .menu-card-section_item div {
   display: flex;
@@ -538,6 +538,7 @@ header img {
   left: 15px;
   font-size: 0.9375em;
   font-weight: 300;
+  text-overflow: ellipsis;
 }
 .menu-card-section_item .price {
   position: relative;
@@ -552,6 +553,24 @@ header img {
   top: -5px;
   font-size: 1.125em;
   font-weight: 500;
+  text-overflow: ellipsis;
+}
+.menu-card-section_item input.square {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.menu-card-section_item input.square {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

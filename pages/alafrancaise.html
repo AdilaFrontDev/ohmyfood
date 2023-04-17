@@ -30,11 +30,12 @@
             <div class="menu-card">
                 <div class="menu-card_title">
                     <h2>À la française</h2>
-                    <label class="heart-checkbox">
-                        <input class="square" type="checkbox"/>
-                        <i class="fa-regular fa-heart unchecked unclicked"></i> 
-                        <i class="fa-solid fa-heart checked clicked"></i>
-                    </label>
+                    <div class="favorite">
+                        <i class="fa-regular fa-heart"></i> 
+                        <div class="favorite--clicked">
+                            <i class="fa-solid fa-heart favorite--clicked_heart"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="menu-card-section">
                     <div class="menu-card-section_title">
@@ -42,12 +43,15 @@
                         <div class="menu-card-section_dividing"></div>
                     </div>
                     
-                    <article class="menu-card-section_item">
+                    <article class="menu-card-section_item"> 
                         <div> 
-                            <h3>Tartare de poulpe acidulé</h3>
-                            <p>Aux zestes d'orange</p>
+                                <h3>Tartare de poulpe acidulé</h3>
+                                <p>Aux zestes d'orange</p>
                         </div> 
+                        <input class="square" type="checkbox"/>
                         <p class="price">25€</p>
+                        
+                        
                     </article>
                     <article class="menu-card-section_item">
                         <div>   

@@ -66,32 +66,29 @@ body {
     }
 }
 
-.heart-checkbox {
-    .square {
-        display: none;
-     }
-    & input [type="checkbox"] {
-        display: none;
-    }
-    & .checked {
-        display: none;
-        background: linear-gradient($color-pimary, $color-secondary);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    & input[type="checkbox"] {
-        &:checked~.checked {
-        display: inline;
-        }
-        &:checked~.unchecked {
-            display: none;
+.favorite {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    &--clicked{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        &_heart {
+            opacity: 0;
+            background: linear-gradient($color-pimary, $color-secondary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: opacity 400ms ease-in;
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 }
-
-
-
 
 
 
@@ -193,8 +190,6 @@ header {
             gap: 80px;
             margin-bottom: 30px;
         } 
-        
-
     }
     &_line-2 {
         display: flex;
@@ -207,23 +202,15 @@ header {
         } 
     }
     &-card {
+        position: relative;
+        width: 340px;
         border-radius: 15px;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-        width: 340px;
         overflow: hidden;
         margin-bottom: 20px;
-        position: relative;
         @media (min-width: 1025px) {
             width: 490px;
         }
-        /*.clicked {
-            color: transparent;
-            &:active {
-                background-image: linear-gradient($color-pimary, $color-secondary);
-                background-clip: text;
-                color: transparent;
-            }
-        }*/
         & .new {
             position: absolute;
             top: 5px;
@@ -256,32 +243,32 @@ header {
         }
         &_text {
                 display: flex;
-                margin-left: 15px;
-                height: 77px;
-                background-color: linear-gradient();
+                justify-content: space-between;
                 align-items: center;
-                position: relative;
-                bottom: -5px;
-
-                h3 {
-                    font-size: 1.125em;
-                    font-weight: 700;
-                   
+                height: 77px;
+                width: 100%;
+                & .description {
+                    height: 100%;
+                    margin-left: 15px;
+                    line-height: 0;
+                    h3 {
+                        font-size: 1.125em;
+                        font-weight: 700;
+                        padding-top: 10px;
+                    }
+                    p {
+                        font-size: 1.0625em;
+                        font-weight: 300;
+                        padding: 7px 0 10px 0;
+                        
+                    }
                 }
-                p {
-                    font-size: 17px;
-                    font-weight: 300;
-                    position: relative;
-                    bottom: 14px;
-                    
-                }
-                i {
-                    position: absolute;
-                    font-size: 22px;
-                    bottom: 33px;
-                    right: 25px;
-                    z-index: 1;
-                    
+                & .favorite {
+                    margin: 15px; 
+                    z-index: 2;
+                    i {
+                        font-size: 22px;  
+                    }
                 }
                 &_logo {
                     background-color: #ffffff;
@@ -295,7 +282,6 @@ header {
             right: 0;
             left: 0;
             z-index: 0;
-            
         }
     }
 }
@@ -320,8 +306,6 @@ header {
             gap: 40px;
         }
     }
-    
-
     h2 {
         font-size: 1.5em;
         font-weight: 700;
@@ -357,7 +341,6 @@ header {
             font-weight: 500;
             position: absolute;
             left:-12px;
-
         }
         &_icon {
             color: darken($secondary-background,45);
@@ -386,7 +369,6 @@ header {
             top: -90px;
         }
     }
-    
     width: 100%;
     @media (min-width: 1025px) {
         flex-direction: row-reverse;
@@ -405,7 +387,6 @@ header {
                 position: relative;
                 top: -3px;
             }
-
         }
         &-links {
             display: flex;
@@ -413,7 +394,6 @@ header {
             gap: 15px;
             @media (min-width: 1025px) {
                 flex-direction: row;
-                
             }
             &_block1 {
                 display: flex;
@@ -425,7 +405,6 @@ header {
                 }
                 @media (min-width: 1025px) {
                     flex-direction: row;
-                    
                 }
             }
             &_block2 {
@@ -437,7 +416,6 @@ header {
                     align-items: center;
                 }
             }
-        
         }
     }
 
@@ -473,11 +451,10 @@ header {
     flex-direction: column;
     position: relative;
     top:-60px;
-   
+    width: 100%;
     @media (min-width: 768px) and (max-width:1025px){
         top: -90px;
     }
-    width: 100%;
     &-card {    
         background-color: $primary-background;  
         border-radius: 40px 40px 0px 0px;  
@@ -542,6 +519,7 @@ header {
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
                 border-radius: 15px;
                 background: #ffffff;
+                overflow: hidden;
                 div {
                     display: flex;
                     flex-direction: column;
@@ -552,6 +530,7 @@ header {
                     left: 15px;
                     font-size: 0.9375em;
                     font-weight: 300;
+                    text-overflow: ellipsis;
                 }
                 & .price {
                     position: relative;
@@ -567,7 +546,27 @@ header {
                     top: -5px;
                     font-size: 1.125em;
                     font-weight: 500;
-                } 
+                    text-overflow: ellipsis;
+                }
+                input.square {
+                    position: absolute;
+                    top:0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 2;
+                }
+                input.square {
+                    position: absolute;
+                    top:0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 2;
+                    opacity: 0;
+                }
+                
+                // transform-origin: right 50%;
             }
         }
     }
