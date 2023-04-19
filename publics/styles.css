@@ -2,6 +2,8 @@
 /* Main */
 * {
   font-family: "Roboto";
+  margin: 0;
+  padding: 0;
 }
 
 main {
@@ -136,6 +138,7 @@ header img {
   font-size: 1.125em;
   font-weight: 300;
   margin-bottom: 50px;
+  padding: 0 25px;
 }
 
 /* Restaurants */
@@ -498,23 +501,23 @@ header img {
 .menu-card-section_title {
   width: 100%;
   max-width: 635px;
-  height: 30px;
-  line-height: 0px;
+  height: 25px;
   font-size: 1em;
   font-weight: 300;
   text-transform: uppercase;
+  position: relative;
 }
-.menu-card-section_dividing {
+.menu-card-section_title_dividing {
   background: #99E2D0;
   width: 40px;
   height: 5px;
   top: 100%;
   bottom: 0%;
   left: 0%;
+  position: absolute;
 }
 .menu-card-section_item {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   max-width: 635px;
   height: 70px;
@@ -524,29 +527,51 @@ header img {
   overflow: hidden;
 }
 .menu-card-section_item_description {
-  line-height: 0px;
-  margin: 8px 0 10px 15px;
+  margin: 8px 10px 0px 15px;
+  overflow: hidden;
 }
 .menu-card-section_item_description h3 {
-  padding-bottom: 5px;
   font-size: 1.125em;
   font-weight: 500;
+  max-width: 600px;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
+  margin: 0;
+  padding: 10px 0 0 0;
 }
 .menu-card-section_item_description p {
+  margin: 0;
+  padding: 0;
   font-size: 0.9375em;
   font-weight: 300;
+  padding-bottom: 5px;
+  max-width: 600px;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 .menu-card-section_item_price {
   display: flex;
   align-items: flex-end;
   line-height: 0px;
-  padding: 0 15px 5px 0;
+  padding: 0 15px 25px 15px;
 }
 .menu-card-section_item_price p {
   font-weight: 700;
   font-size: 0.9375em;
+}
+.menu-card-section_item--selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60px;
+  background-color: #99E2D0;
+}
+.menu-card-section_item--selected i {
+  color: #ffffff;
+  font-size: 1.25em;
 }
 
 /*# sourceMappingURL=styles.css.map */

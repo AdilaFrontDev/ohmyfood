@@ -12,6 +12,8 @@ $secondary-background: #EAEAEA;
 
 * {
     font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
 }
 
 main {
@@ -152,6 +154,7 @@ header {
         font-size: 1.125em;
         font-weight: 300;
         margin-bottom: 50px;
+        padding: 0 25px;
     }
 }
 
@@ -260,7 +263,6 @@ header {
                         font-size: 1.0625em;
                         font-weight: 300;
                         padding: 7px 0 10px 0;
-                        
                     }
                 }
                 & .favorite {
@@ -300,7 +302,6 @@ header {
     &-choice {
         display: flex;
         flex-direction: column;
-        
         @media (min-width: 1025px) {
             flex-direction: row;
             gap: 40px;
@@ -489,23 +490,24 @@ header {
             &_title {
                 width: 100%;
                 max-width: 635px;
-                height: 30px;
-                line-height: 0px;
+                height: 25px;
                 font-size: 1em;
                 font-weight: 300;
                 text-transform: uppercase;
+                position: relative;
+                &_dividing {
+                    background: $color-tertiary;
+                    width: 40px;
+                    height: 5px;
+                    top: 100%;
+                    bottom: 0%;
+                    left: 0%;
+                    position: absolute;
+                }
             }
-            &_dividing {
-                background: $color-tertiary;
-                width: 40px;
-                height: 5px;
-                top: 100%;
-                bottom: 0%;
-                left: 0%;
-            }
+            
             &_item {
                 display: flex;
-                justify-content: space-between;
                 width: 100%;
                 max-width: 635px;
                 height: 70px;
@@ -514,31 +516,56 @@ header {
                 background: #ffffff;
                 overflow: hidden;
                 &_description {
-                    line-height: 0px;
-                    margin: 8px 0 10px 15px;
+                    margin: 8px 10px 0px 15px;
+                    overflow: hidden;
+                     
                     h3 {
-                        padding-bottom: 5px;
                         font-size: 1.125em;
                         font-weight: 500;
+                        max-width: 600px;
+                        white-space: nowrap;
+                        overflow: hidden;
                         text-overflow: ellipsis;
-                    }p {
+                        margin: 0;
+                        padding: 10px 0 0 0;
+                    }
+                    p {
+                        margin: 0;
+                        padding:0;
                         font-size: 0.9375em;
                         font-weight: 300;
+                        padding-bottom: 5px;
+                        max-width: 600px;
+                        white-space: nowrap;
+                        overflow: hidden;
                         text-overflow: ellipsis;
+                        
                     }
                 }
                 &_price {          
                     display: flex;
                     align-items:flex-end;
                     line-height: 0px;
-                    padding: 0 15px 5px 0;
+                    padding: 0 15px 25px 15px;
                     p {
                         font-weight: 700;
                         font-size: 0.9375em;
                     }
-
                 }  
-                
+                &--selected {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    width: 60px;
+                    background-color: $color-tertiary;
+                    i {
+                        color: #ffffff;
+                        font-size: 1.25em;
+                    }
+
+
+                }
                 
             
                 // transform-origin: right 50%;
