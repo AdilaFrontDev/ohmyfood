@@ -10,6 +10,97 @@ main {
   position: relative;
 }
 
+.container {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  visibility: hidden;
+  animation: loading 5000ms linear backwards;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+.loader-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+.loader-element-1 {
+  display: flex;
+  overflow: visible;
+  align-items: center;
+  justify-content: center;
+}
+.loader-element-1 i {
+  font-size: 10em;
+  color: #ffffff;
+  animation: spin 700ms 8 ease-in-out alternate-reverse;
+}
+.loader-element-2 {
+  display: flex;
+  overflow: visible;
+  align-items: center;
+  justify-content: center;
+}
+.loader-element-2 i {
+  font-size: 10em;
+  color: #ffffff;
+  animation: spin-revert 700ms 8 ease-in-out alternate-reverse;
+}
+.loader-text {
+  font-family: "Shrikhand";
+  font-size: 1.75em;
+  font-weight: 400;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+    color: #9356DC;
+  }
+  50% {
+    color: #008766;
+  }
+  100% {
+    transform: rotate(25deg);
+    color: #9356DC;
+  }
+}
+@keyframes spin-revert {
+  0% {
+    transform: rotate(0);
+    color: #9356DC;
+  }
+  50% {
+    color: #008766;
+  }
+  100% {
+    transform: rotate(-25deg);
+    color: #9356DC;
+  }
+}
+@keyframes loading {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
 body {
   width: 100%;
   max-width: 1440px;
@@ -73,7 +164,7 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: opacity 400ms ease-in;
+  transition: opacity 300ms ease-in;
 }
 .favorite--clicked_heart:hover {
   opacity: 1;
@@ -132,7 +223,7 @@ header img {
 }
 .menu-reservation h1 {
   font-size: 1.5em;
-  margin-top: 50px;
+  margin: 50px 5px 30px 5px;
 }
 .menu-reservation > p {
   font-size: 1.125em;
@@ -146,62 +237,48 @@ header img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: cen;
+  justify-content: center;
   background-color: #F6F6F6;
   position: relative;
-  padding: 30px 0 0 0;
+  padding: 30px 20px 0 20px;
 }
 .restaurants h2 {
   font-size: 1.5em;
   font-weight: 700;
-  position: relative;
-  right: 110px;
   margin-bottom: 25px;
+  width: 100%;
+  max-width: 1060px;
+  text-align: left;
 }
-@media (min-width: 768px) {
-  .restaurants h2 {
-    right: 465px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1025px) {
-  .restaurants h2 {
-    right: 315px;
-  }
-}
-.restaurants_line-1 {
+.restaurants_line-1, .restaurants_line-2 {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 @media (min-width: 768px) {
-  .restaurants_line-1 {
+  .restaurants_line-1, .restaurants_line-2 {
     flex-direction: row;
-    gap: 80px;
-    margin-bottom: 30px;
-  }
-}
-.restaurants_line-2 {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 60px;
-}
-@media (min-width: 768px) {
-  .restaurants_line-2 {
-    flex-direction: row;
+    justify-content: center;
     gap: 80px;
     margin-bottom: 30px;
   }
 }
 .restaurants-card {
-  position: relative;
-  width: 340px;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  min-width: 340px;
   margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .restaurants-card {
+    width: 50%;
+  }
 }
 @media (min-width: 1025px) {
   .restaurants-card {
-    width: 490px;
+    max-width: 490px;
   }
 }
 .restaurants-card .new {
@@ -248,17 +325,16 @@ header img {
 .restaurants-card_text_description {
   height: 100%;
   margin-left: 15px;
-  line-height: 0;
 }
 .restaurants-card_text_description h3 {
   font-size: 1.125em;
   font-weight: 700;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 .restaurants-card_text_description p {
   font-size: 1.0625em;
   font-weight: 300;
-  padding: 7px 0 10px 0;
+  padding-top: 5px;
 }
 .restaurants-card_text .favorite {
   margin: 15px;
@@ -285,12 +361,18 @@ header img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  justify-content: center;
   padding: 30px 0;
+  background-color: #ffffff;
+  position: relative;
 }
 .functioning-choice {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1060px;
 }
 @media (min-width: 1025px) {
   .functioning-choice {
@@ -298,16 +380,33 @@ header img {
     gap: 40px;
   }
 }
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .functioning-choice {
+    width: 95%;
+  }
+}
 .functioning h2 {
   font-size: 1.5em;
   font-weight: 700;
-  position: relative;
-  right: 80px;
   margin-bottom: 25px;
+  width: 75%;
+  min-width: 350px;
+  max-width: 1060px;
+  text-align: left;
 }
 @media (min-width: 1025px) {
   .functioning h2 {
-    right: 445px;
+    width: 1060px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .functioning h2 {
+    width: 98%;
+  }
+}
+@media (max-width: 1025px) {
+  .functioning h2 {
+    width: 85%;
   }
 }
 .functioning-card {
@@ -318,10 +417,20 @@ header img {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  position: relative;
-  width: 322px;
+  width: 80%;
   height: 72px;
   margin-bottom: 20px;
+  position: relative;
+}
+@media (max-width: 1025px) {
+  .functioning-card {
+    min-width: 322px;
+  }
+}
+@media (min-width: 1170px) {
+  .functioning-card {
+    max-width: 322px;
+  }
 }
 .functioning-card_number {
   display: inline-block;
@@ -354,7 +463,6 @@ header img {
   flex-direction: column;
   padding: 25px;
   gap: 30px;
-  width: 100%;
 }
 .footer--shift {
   position: relative;
@@ -482,6 +590,7 @@ header img {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  height: 100px;
 }
 .menu-card_title h2 {
   font-family: "Shrikhand";
@@ -497,6 +606,17 @@ header img {
   align-items: center;
   gap: 20px;
   margin: 0 15px 40px 15px;
+  opacity: 0;
+  animation: appearance 1000ms both;
+}
+.menu-card-section--1 {
+  animation-delay: 800ms;
+}
+.menu-card-section--2 {
+  animation-delay: 1600ms;
+}
+.menu-card-section--3 {
+  animation-delay: 2400ms;
 }
 .menu-card-section_title {
   width: 100%;
@@ -526,9 +646,22 @@ header img {
   background: #ffffff;
   overflow: hidden;
 }
+.menu-card-section_item .transition-choice {
+  display: flex;
+  height: 70px;
+  transform: translateX 120px;
+  transition: transform ease-in-out 300ms;
+  position: relative;
+  right: -60px;
+}
+.menu-card-section_item:hover > .transition-choice {
+  transform: translateX(-60px);
+}
 .menu-card-section_item_description {
   margin: 8px 10px 0px 15px;
   overflow: hidden;
+  z-index: 1;
+  width: 80%;
 }
 .menu-card-section_item_description h3 {
   font-size: 1.125em;
@@ -554,8 +687,9 @@ header img {
 .menu-card-section_item_price {
   display: flex;
   align-items: flex-end;
-  line-height: 0px;
-  padding: 0 15px 25px 15px;
+  justify-content: center;
+  padding-bottom: 15px;
+  width: 60px;
 }
 .menu-card-section_item_price p {
   font-weight: 700;
@@ -572,6 +706,21 @@ header img {
 .menu-card-section_item--selected i {
   color: #ffffff;
   font-size: 1.25em;
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
