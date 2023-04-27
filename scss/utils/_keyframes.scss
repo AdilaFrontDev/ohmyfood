@@ -1,0 +1,52 @@
+@keyframes appearance {
+    0% {
+        opacity: 0;
+    }
+    20% {
+
+        opacity: .1;
+    }
+    50% {
+        opacity:.4;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0);
+        color: $color-pimary;
+    }
+    50% {
+        color: $color-tertiary-bis;
+    }
+    100% {
+        transform: rotate(25deg);
+        color: $color-pimary;
+    }
+}
+    
+@keyframes spin-revert {
+    0%{
+        transform: rotate(0);
+        color: $color-pimary;
+    }
+    50% {
+        color: $color-tertiary-bis;
+    }
+    100% {
+        transform: rotate(-25deg);
+        color: $color-pimary;
+    }
+}
+
+@keyframes loading {
+    0% {
+        visibility: visible;
+    }
+    100% {
+        visibility: visible;
+    }
+}
