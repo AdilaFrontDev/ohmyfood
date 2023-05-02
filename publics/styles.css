@@ -188,7 +188,7 @@ header {
 }
 header img {
   width: 162px;
-  height: 27, 7px;
+  height: 27.7px;
 }
 @media (min-width: 768px) {
   header img {
@@ -199,7 +199,7 @@ header img {
 
 .back-to-index {
   position: absolute;
-  top: 65/2 px;
+  top: 32.5px;
   left: 20px;
 }
 .back-to-index a {
@@ -550,6 +550,19 @@ header img {
     height: 400px;
   }
 }
+.background--lanoteenchantee {
+  height: 300px;
+}
+@media (min-width: 768px) and (max-width: 1025px) {
+  .background--lanoteenchantee {
+    height: 350px;
+  }
+}
+@media (min-width: 1025px) {
+  .background--lanoteenchantee {
+    height: 400px;
+  }
+}
 .background_img {
   width: 100%;
 }
@@ -560,6 +573,19 @@ header img {
 }
 @media (min-width: 1025px) {
   .background_img {
+    object-position: 0 -330px;
+  }
+}
+.background_img--lanoteenchantee {
+  object-position: 0 -95px;
+}
+@media (min-width: 768px) and (max-width: 1025px) {
+  .background_img--lanoteenchantee {
+    object-position: 0 -230px;
+  }
+}
+@media (min-width: 1025px) {
+  .background_img--lanoteenchantee {
     object-position: 0 -330px;
   }
 }
@@ -654,7 +680,7 @@ header img {
 .menu-card-section_item .transition-choice {
   display: flex;
   height: 70px;
-  transform: translateX 120px;
+  transform: translateX(0px);
   transition: transform ease-in-out 300ms;
   position: relative;
   right: -60px;

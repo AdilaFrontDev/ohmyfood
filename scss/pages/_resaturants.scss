@@ -6,6 +6,15 @@
     @media (min-width: 1025px) {
         height: 400px;    
     }
+    &--lanoteenchantee{
+        height: 300px;
+        @media (min-width: 768px) and (max-width:1025px){
+            height: 350px;
+        }
+        @media (min-width: 1025px) {
+            height: 400px;    
+        }
+    } 
     &_img {
         width: 100%;
         @media (min-width: 768px) and (max-width:1025px) {
@@ -13,6 +22,15 @@
         }
         @media (min-width: 1025px) {
             object-position: 0 -330px;
+        }
+        &--lanoteenchantee {
+            object-position: 0 -95px;
+            @media (min-width: 768px) and (max-width:1025px) {
+                object-position: 0 -230px;
+            }
+            @media (min-width: 1025px) {
+                object-position: 0 -330px;
+            }
         }
     }
 }
@@ -96,7 +114,7 @@
                 .transition-choice {
                     display: flex;
                     height: 70px;
-                    transform: translateX (120px);
+                    transform: translateX(0px);
                     transition:  transform ease-in-out 3*$duration;
                     position:relative;
                     right: -60px;
