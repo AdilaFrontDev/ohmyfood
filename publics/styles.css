@@ -341,6 +341,7 @@ header img {
   .functioning-choice {
     flex-direction: row;
     gap: 40px;
+    margin-bottom: 0px;
   }
 }
 @media (min-width: 1025px) and (max-width: 1440px) {
