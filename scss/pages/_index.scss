@@ -35,12 +35,14 @@
 .functioning {
     @include flex-center;
     flex-direction: column;
-    padding: 30px 0;
+    padding: 50px 0;
     background-color: #ffffff;
     position: relative;
     &-choice {
         @include flex-center;
         flex-direction: column;
+        gap:25px;
+        margin-bottom: 20px;
         width: 100%;
         max-width: 1060px;
         @media (min-width: 1025px) {
@@ -77,7 +79,6 @@
         gap: 25px;
         width: 80%;
         height: 72px;
-        margin-bottom: 20px;
         position: relative;
         @media (max-width: 1025px) {
             min-width: 322px;
@@ -115,7 +116,10 @@
     flex-direction: column;
     background-color: $primary-background;
     position: relative;
-    padding: 30px 20px 0 20px;
+    padding: 50px 20px;
+    @media (min-width: 768px) {
+        padding: 30px 20px 0 20px;
+    }
     h2 {
         font-size: 1.5em;
         font-weight: 700;
@@ -124,22 +128,26 @@
         max-width: 1060px;
         text-align: left;
     }
-    &_line-1 , &_line-2 {
+    &_line-1, &_line-2 {
         display: flex;
         flex-direction: column;
         align-items: center;
         @media (min-width: 768px) {
             flex-direction: row;
             justify-content: center;
-            gap: 80px;
+            gap: 100px;
             margin-bottom: 30px;
         } 
+    }
+    &_line-1 {
+        @media (min-width: 768px) {
+            margin-bottom: 50px;
+        }
     }
     &-card {
         border-radius: 15px;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         min-width: 340px;
-        margin-bottom: 20px;
         overflow: hidden;
         position: relative;
         @media (min-width: 768px) {

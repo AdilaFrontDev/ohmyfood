@@ -4,7 +4,8 @@
   "description": "Création du site Ohmyfood Paris",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./scss/styles.scss:publics/styles.css"
+    "sass": "sass --watch ./scss/styles.scss:publics/styles.css",
+    "prefix": "postcss ./publics/styles.css --use autoprefixer -d ./publics/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,7 @@
   },
   "author": "AdilaFrontDev",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/AdilaFrontDev/ohmyfood/issues"
   },
