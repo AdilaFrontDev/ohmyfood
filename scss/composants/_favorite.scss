@@ -7,13 +7,15 @@
         @include poisition-0;
         &_heart {
             opacity: 0;
-            background: linear-gradient($color-pimary, $color-secondary);
+            background: linear-gradient(#FFFFFF 0 50%, $color-pimary, $color-secondary);
+            background-size: auto 60px;
+            background-position: 0 0px;
             background-clip: text;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: opacity 3*$duration ease-in;
+            color: transparent;
+            animation: drain-out 5 * $duration ease-in  both;
             &:hover {
-                opacity: 1;
+                animation: fill-up 5 * $duration ease-in  both;
             }
         }
     }
