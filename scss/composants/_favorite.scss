@@ -7,7 +7,7 @@
         @include poisition-0;
         &_heart {
             opacity: 0;
-            background: linear-gradient(#FFFFFF 0 50%, $color-pimary, $color-secondary);
+            background: linear-gradient(#FFFFFF 0 50%, $color-pimary 50% 65% , $color-secondary);
             background-size: auto 60px;
             background-position: 0 0px;
             background-clip: text;
